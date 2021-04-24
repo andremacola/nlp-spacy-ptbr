@@ -1,2 +1,10 @@
 # nlp-spacy-ptbr
-Experimentos com NLP
+
+Experimentos em PT-BR com NLP utilizando spaCy
+
+## Utilização:
+
+- Instale um virtual env com python3
+- Instale as dependencias com o `pip install requirements.txt `
+- OBS: Será necessário copiar/importar o `syntax_iterations` do *espanhol* dentro do spaCy (site-packages) no `__init__` do idioma PT
+- Rode com `python ./src/gramatic.py` ou qualquer outro arquivo no src/
