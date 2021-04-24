@@ -8,10 +8,10 @@ start_time = time.time()
 
 for i in range(1):
   # Texto para análise
-  text = pathlib.Path("./textos/hernia.txt").read_text()
+  text = pathlib.Path("./textos/noticia-2.txt").read_text()
 
   # Carregar spaCy, idiomas e configurações
-  nlp = spacy.load("pt_core_news_sm")
+  nlp = spacy.load("pt_core_news_md")
 
   # Adicionar o PyTextRank na pipeline do spaCy
   nlp.add_pipe("textrank")
