@@ -6,10 +6,11 @@ from controllers.rank import Rank
 # instanciar o Flask
 app = Flask(__name__)
 
-# Carregar spaCy, idiomas e configurações na memória
+# carregar spaCy, idiomas e configurações na memória
 nlp = spacy.load("pt_core_news_md")
 nlp.add_pipe("textrank")
 
+# Rota de ranking dos termos
 @app.route("/rank", methods=['GET', 'POST'])
 def rank():
     params = request.form # postdata
