@@ -6,19 +6,18 @@ from icecream import ic
 
 start_time = time.time()
 
-for i in range(1):
-  # Texto para análise
-  text = pathlib.Path("./textos/noticia-2.txt").read_text()
+# Texto para análise
+text = pathlib.Path("./textos/bbb.txt").read_text()
 
-  # Carregar spaCy, idiomas e configurações
-  nlp = spacy.load("pt_core_news_md")
+# Carregar spaCy, idiomas e configurações
+nlp = spacy.load("pt_core_news_md")
 
-  # Adicionar o PyTextRank na pipeline do spaCy
-  nlp.add_pipe("textrank")
+# Adicionar o PyTextRank na pipeline do spaCy
+nlp.add_pipe("textrank", config={ "stopwords": { "ano": ["NOUN"] } })
+# nlp.add_pipe("positionrank", config={ "stopwords": { "ano": ["NOUN"] } })
 
-  # Rodar documento no sPacy
-  doc = nlp(text)
-
+# Rodar documento no sPacy
+doc = nlp(text)
 
 # Acessar dados
 ic('==================== Termos Grandes: ====================')

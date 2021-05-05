@@ -17,7 +17,6 @@ for i in range(1):
   doc1 = nlp(text1)
   doc2 = nlp(text2)
 
-
 # Acessar dados
 ic('==================== Análise de Similaridade: ====================')
 ic(doc1.similarity(doc2))

@@ -7,14 +7,13 @@ start_time = time.time()
 
 for i in range(1):
   # Texto para análise
-  text = pathlib.Path("./textos/hernia.txt").read_text()
+  text = pathlib.Path("./textos/bbb.txt").read_text()
 
   # Carregar spaCy, idiomas e configurações
   nlp = spacy.load("pt_core_news_sm")
 
   # Rodar documento no sPacy
   doc = nlp(text)
-
 
 # Acessar dados
 ic('==================== Análise Gramatical: ====================')
