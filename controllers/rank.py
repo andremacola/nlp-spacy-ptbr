@@ -21,7 +21,7 @@ class Rank:
             word = { 'text': phrase.text, 'rank': phrase.rank }
 
             # ignorar keywords com score vazio
-            if phrase.rank == 0:
+            if phrase.rank == 0 or len(phrase.text) <= 2:
                 continue
 
             # separar sentença/palavra por ordem de grandeza

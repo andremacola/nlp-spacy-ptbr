@@ -2,6 +2,7 @@ import spacy
 import pytextrank
 from fastapi import Form, FastAPI
 from controllers.rank import Rank
+from controllers.entities import Entities
 
 # instanciar o Flask
 app = FastAPI()
@@ -14,4 +15,10 @@ nlp.add_pipe("textrank")
 @app.post("/rank")
 def rank(text: str = Form(...)):
     rank = Rank(nlp, text)
+    return rank.run()
+
+# Rota de entidade dos textos
+@app.post("/entities")
+def entities(text: str = Form(...)):
+    rank = Entities(nlp, text)
     return rank.run()
