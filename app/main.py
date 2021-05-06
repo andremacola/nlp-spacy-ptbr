@@ -4,6 +4,7 @@ import pytextrank
 from fastapi import Form, FastAPI
 from controllers.rank import Rank
 from controllers.entities import Entities
+from controllers.article import ParseArticle
 
 # instanciar o Flask
 app = FastAPI()
@@ -23,6 +24,12 @@ def rank(text: str = Form(...)):
 def entities(text: str = Form(...)):
     entities = Entities(nlp, text)
     return entities.run()
+
+# Rota de entidade dos textos
+@app.post("/article")
+def article(url: str = Form(...), html: str = Form(...)):
+    article = ParseArticle(nlp, url, html)
+    return article.run()
 
 # # Iniciar Uvicorn
 # if __name__ == "__main__":
