@@ -1,3 +1,4 @@
+# import uvicorn
 import spacy
 import pytextrank
 from fastapi import Form, FastAPI
@@ -20,5 +21,9 @@ def rank(text: str = Form(...)):
 # Rota de entidade dos textos
 @app.post("/entities")
 def entities(text: str = Form(...)):
-    rank = Entities(nlp, text)
-    return rank.run()
+    entities = Entities(nlp, text)
+    return entities.run()
+
+# # Iniciar Uvicorn
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="0.0.0.0", port=5757)

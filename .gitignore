@@ -8,5 +8,5 @@ venv
 .env
 .DS_Store
 __pycache__
-
+ecosystem.config.js
 .vercel
