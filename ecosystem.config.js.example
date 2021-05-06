@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
       "name": "easy-nlp",
-      "interpreter": "~/.virtualenvs/nlp/bin/python",
+      "interpreter": "",
       "cwd": "",
       "script": "uvicorn",
       "args" : "main:app --host 0.0.0.0 --port 5757",
