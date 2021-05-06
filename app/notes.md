@@ -17,3 +17,10 @@
 	- Ex: Os investigados são (substantivo)
 
 - As relacionadas podem ser mais assertivas cruzando o termo da palavra-chave com as entidades (que podem ser consideradas tags)
+
+## SPACY
+
+Substituir pasta `lang`
+
+`cp spacy/lang/pt/syntax_iterators.py ~/.virtualenvs/nlp/lib/python3.9/site-packages/spacy/lang/pt`
+`cp spacy/lang/pt/__init__.py ~/.virtualenvs/nlp/lib/python3.9/site-packages/spacy/lang/pt`
