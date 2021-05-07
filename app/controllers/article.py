@@ -7,7 +7,7 @@ PROCESSAR URL E ARTIGO PARA INDEXAÇÃO
 """
 
 class ParseArticle:
-    def __init__(self, nlp, url: str, html: str):
+    def __init__(self, nlp, url: str, html):
         self.nlp = nlp
         self.url = url
         self.html = html

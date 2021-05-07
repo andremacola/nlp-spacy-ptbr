@@ -2,6 +2,7 @@
 import spacy
 import pytextrank
 from fastapi import Form, FastAPI
+from models.models import ArticleModel
 from controllers.rank import Rank
 from controllers.entities import Entities
 from controllers.article import ParseArticle
@@ -27,8 +28,8 @@ def entities(text: str = Form(...)):
 
 # Rota de entidade dos textos
 @app.post("/article")
-def article(url: str = Form(...), html: str = Form(...)):
-    article = ParseArticle(nlp, url, html)
+def article(item: ArticleModel):
+    article = ParseArticle(nlp, item.url, item.html)
     return article.run()
 
 # # Iniciar Uvicorn
