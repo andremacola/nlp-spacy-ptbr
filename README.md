@@ -1,4 +1,4 @@
-# easy-nlp
+# nlp
 
 Serviço de extração de artigos, ranking de keywords e entidades para o Easy Content
 
